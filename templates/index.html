@@ -1,0 +1,56 @@
+{% extends 'base.html' %} {% set title = 'Find a Brewery - Home' %} {% set state_list =
+['Alabama','Alaska','Arizona','Arkansas','California','Colorado','Connecticut','Delaware','Florida','Georgia','Hawaii','Idaho','Illinois','Indiana','Iowa','Kansas','Kentucky','Louisiana','Maine','Maryland','Massachusetts','Michigan','Minnesota','Mississippi','Missouri','Montana','Nebraska','Nevada','New
+Hampshire','New Jersey','New Mexico','New York','North Carolina','North
+Dakota','Ohio','Oklahoma','Oregon','Pennsylvania','Rhode Island','South Carolina','South
+Dakota','Tennessee','Texas','Utah','Vermont','Virginia','Washington','West Virginia','Wisconsin','Wyoming'] %} {% block
+content %}
+
+<div style="text-align: center; width: 80%; margin: auto">
+  <h1>US Brewery Finder</h1>
+  <h6>Powered by Open Brewery DB</h6>
+  <br />
+  <form method="post">
+    <div class="mb-3">
+      <h4><label for="name_search" class="form-label">Search by Brewery</label></h4>
+      <input
+        type="text"
+        class="form-control"
+        id="name_search"
+        name="name_search"
+        placeholder="Enter Brewery Name"
+        required="required"
+      />
+    </div>
+    <button type="submit" class="btn btn-primary">Submit</button>
+  </form>
+  <br />
+  <form method="post">
+    <div class="mb-3">
+      <h4><label for="city_search" class="form-label">Search by City</label></h4>
+      <input
+        type="text"
+        class="form-control"
+        id="city_search"
+        name="city_search"
+        placeholder="Enter City"
+        required="required"
+      />
+    </div>
+    <button type="submit" class="btn btn-primary">Submit</button>
+  </form>
+  <br />
+  <form method="post">
+    <div class="mb-3">
+      <h4><label for="state_search" class="form-label">Search by State</label></h4>
+      <select class="form-select" aria-label="Default select example" name="state_search" required="required">
+        <option selected>Select a State</option>
+        {% for state in state_list %}
+        <option value="{{ state }}">{{ state }}</option>
+        {% endfor %}
+      </select>
+    </div>
+    <button type="submit" class="btn btn-primary">Submit</button>
+  </form>
+</div>
+
+{% endblock %}
