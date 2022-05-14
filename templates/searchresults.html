@@ -1,0 +1,30 @@
+{% extends 'base.html' %} {% set title = 'Search Results' %} {% block content %}
+
+<div class="short_content" style="text-align: center; width: 80%; margin: auto">
+  <table class="table">
+    <thead>
+      <tr>
+        <th scope="col">#</th>
+        <th scope="col">Name</th>
+        <th scope="col">City</th>
+        <th scope="col">State</th>
+        <th scope="col">Website</th>
+      </tr>
+    </thead>
+    <tbody>
+      {% for brewery in brewery_data %}
+      <tr>
+        <th scope="row">
+          <a href="{{ url_for('brewery_details', brewery_id=loop.index) }}">{{ loop.index }}</a>
+        </th>
+        <td>{{ brewery['name'] }}</td>
+        <td>{{ brewery['city'] }}</td>
+        <td>{{ brewery['state'] }}</td>
+        <td>{{ brewery['website_url'] }}</td>
+      </tr>
+      {% endfor %}
+    </tbody>
+  </table>
+</div>
+
+{% endblock %}

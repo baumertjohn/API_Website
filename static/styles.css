@@ -1,0 +1,4 @@
+/* Keeps footer at bottom when needed */
+.short_content {
+  min-height: calc(100vh - 160px);
+}
