@@ -1,21 +1,31 @@
 {% extends 'base.html' %} {% set title = 'Brewery Details' %} {% block content %}
 
 <div class="short_content" style="text-align: center; width: 80%; margin: auto">
-  Brewery Name: {{ brewery['name'] }}
   <br />
-  Brewery Type: {{ brewery['brewery_type'].title() }}
+  <div class="card" style="text-align: center; width: 510px; margin: auto">
+    <div class="card-body">
+      <h5 class="card-title">{{ brewery['name'] }}</h5>
+      <p class="card-text">Brewery Type: {{ brewery['brewery_type'].title() }}</p>
+      <p class="card-text">{{ brewery['city'] }}, {{brewery['state']}}</p>
+      {% if brewery['website_url'] != None %}
+      <a href="{{ brewery['website_url'] }}" target="_blank" class="card-link">{{ brewery['website_url'] }}</a>
+      {% endif %}
+    </div>
+    <div style="padding: 5px">
+      <iframe
+        width="500"
+        height="500"
+        style="border: 0"
+        loading="lazy"
+        allowfullscreen
+        referrerpolicy="no-referrer-when-downgrade"
+        src="https://www.google.com/maps/embed/v1/place?key={{ api }}&q={{ brewery['name'].replace('&', '') }},{{ brewery['city'] }},{{brewery['state']}}"
+      ></iframe>
+    </div>
+  </div>
   <br />
-  Brewery Address: {{ brewery['street'] }}, {{ brewery['city'] }}, {{brewery['state']}}
-  <br />
-  <iframe
-    width="640"
-    height="480"
-    style="border: 0"
-    loading="lazy"
-    allowfullscreen
-    referrerpolicy="no-referrer-when-downgrade"
-    src="https://www.google.com/maps/embed/v1/place?key={{ api }}&q={{ brewery['name'].replace('&', '') }},{{ brewery['city'] }},{{brewery['state']}}"
-  ></iframe>
+  <button class="btn btn-warning" onclick="history.back()" style="margin-right: 25px" type="button">Return to List</button>
+  <a class="btn btn-warning" href="{{ url_for('home') }}" role="button">Home</a>
 </div>
 
 {% endblock %}

@@ -5,9 +5,8 @@ Dakota','Ohio','Oklahoma','Oregon','Pennsylvania','Rhode Island','South Carolina
 Dakota','Tennessee','Texas','Utah','Vermont','Virginia','Washington','West Virginia','Wisconsin','Wyoming'] %} {% block
 content %}
 
-<div style="text-align: center; width: 80%; margin: auto">
-  <h1>US Brewery Finder</h1>
-  <h6>Powered by Open Brewery DB</h6>
+<div class="short_content" style="text-align: center; width: 50%; margin: auto">
+  <h1>Brewery Finder</h1>
   <br />
   <form method="post">
     <div class="mb-3">
@@ -21,7 +20,7 @@ content %}
         required="required"
       />
     </div>
-    <button type="submit" class="btn btn-primary">Submit</button>
+    <button type="submit" class="btn btn-warning">Submit</button>
   </form>
   <br />
   <form method="post">
@@ -36,7 +35,7 @@ content %}
         required="required"
       />
     </div>
-    <button type="submit" class="btn btn-primary">Submit</button>
+    <button type="submit" class="btn btn-warning">Submit</button>
   </form>
   <br />
   <form method="post">
@@ -49,7 +48,7 @@ content %}
         {% endfor %}
       </select>
     </div>
-    <button type="submit" class="btn btn-primary">Submit</button>
+    <button type="submit" class="btn btn-warning">Submit</button>
   </form>
 </div>
 
