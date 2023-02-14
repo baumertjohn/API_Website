@@ -8,7 +8,7 @@ content %}
 <div class="short_content" style="text-align: center; width: 50%; margin: auto">
   <h1>Brewery Finder</h1>
   <br />
-  <form method="post">
+  <form method="post" onSubmit="document.getElementById('nameSubmit').disabled=true; document.getElementById('nameSubmit').innerHTML = 'Searching...'">
     <div class="mb-3">
       <h4><label for="name_search" class="form-label">Search by Brewery</label></h4>
       <input
@@ -20,10 +20,10 @@ content %}
         required="required"
       />
     </div>
-    <button type="submit" class="btn btn-warning">Submit</button>
+    <button type="submit" id="nameSubmit" class="btn btn-warning">Submit</button>
   </form>
   <br />
-  <form method="post">
+  <form method="post" onSubmit="document.getElementById('citySubmit').disabled=true; document.getElementById('citySubmit').innerHTML = 'Searching...'">
     <div class="mb-3">
       <h4><label for="city_search" class="form-label">Search by City</label></h4>
       <input
@@ -35,10 +35,10 @@ content %}
         required="required"
       />
     </div>
-    <button type="submit" class="btn btn-warning">Submit</button>
+    <button type="submit" id="citySubmit" class="btn btn-warning">Submit</button>
   </form>
   <br />
-  <form method="post">
+  <form method="post" onSubmit="document.getElementById('stateSubmit').disabled=true; document.getElementById('stateSubmit').innerHTML = 'Searching...'">
     <div class="mb-3">
       <h4><label for="state_search" class="form-label">Search by State</label></h4>
       <select class="form-select" aria-label="Default select example" name="state_search" required="required">
@@ -48,7 +48,7 @@ content %}
         {% endfor %}
       </select>
     </div>
-    <button type="submit" class="btn btn-warning">Submit</button>
+    <button type="submit" id="stateSubmit" class="btn btn-warning">Submit</button>
   </form>
 </div>
 
