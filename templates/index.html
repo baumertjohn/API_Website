@@ -46,7 +46,7 @@
       <select class="form-select" aria-label="Default select example" name="state_search" required="required">
         <option selected>Select a State</option>
         {% for state in state_list %}
-        <option value="{{ state|replace(' ', '_' }}">{{ state }}</option>
+        <option value="{{ state|replace(' ', '_') }}">{{ state }}</option>
         {% endfor %}
       </select>
     </div>
